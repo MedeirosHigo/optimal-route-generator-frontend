@@ -22,14 +22,19 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/best-route",
+            "outputPath": "dist/routing-kruskal",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
+            "allowedCommonJsDependencies": [
+              "leaflet"
+            ],
+            "baseHref": "/routing-kruskal/",
+            "deployUrl": "/routing-kruskal/",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -39,9 +44,12 @@
               }
             ],
             "styles": [
+              "./node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/leaflet/dist/leaflet.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,12 +106,18 @@
               }
             ],
             "styles": [
+              "./node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/leaflet/dist/leaflet.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a95de322-34b7-4acb-b508-f46d747750cb"
   }
 }
