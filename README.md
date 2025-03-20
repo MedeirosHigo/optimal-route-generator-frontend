@@ -3,7 +3,7 @@
 
 Ce projet frontend a été développé avec **Angular** dans le cadre d’une application de planification d’itinéraires optimisés. Il s’intègre avec une **API backend (Kruskal API)** pour calculer des routes optimisées à l’aide de l’algorithme de Kruskal, et avec **l’API OpenRouteService** pour obtenir les distances entre les points géographiques.
 
-### Image du site sans optmisation
+### Image de la communication entre frontend et les APIs
 <img src="assets/communication.png" width="400"/>
 
 ## 🎯 Objectif de l'application
