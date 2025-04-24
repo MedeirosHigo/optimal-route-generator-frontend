@@ -1,0 +1,28 @@
+<div class="map-text-container">
+
+  <div class="map-container" leaflet [leafletOptions]="mapOptions" [leafletLayers]="_mapLayers()"
+    (leafletDoubleClick)="onMapDoubleClick($event)">
+  </div>
+  <div class="text-container">
+    <p>Pour utiliser le système, suivez les étapes suivantes :</p>
+
+  <ol>
+    <li>Créez plusieurs marqueurs sur la carte en effectuant un DoubleClick à différents endroits.</li>
+    <li>Cliquez sur le bouton <strong> Calculate sans Kruskal</strong> pour calculer et visualiser les trajets entre tous les points <strong>sans optimisation</strong>.</li>
+    <li>Cliquez ensuite sur le bouton <strong> Calculate avec Kruskal</strong> pour appliquer l’optimisation et afficher les itinéraires optimisés à l’aide de l’algorithme de Kruskal.</li>
+  </ol>
+
+  <section class="info-box">
+    <p><strong>Remarque :</strong> Assurez-vous de créer au moins quatre marqueurs pour bien observer la différence entre les trajets avec et sans optimisation.</p>
+    <p>Le calcul des distances optimales utilise <em>l'algorithme de Kruskal</em>, un algorithme glouton qui trouve un arbre couvrant minimum afin de minimiser la distance totale de déplacement.</p>
+  </section>
+  </div>
+</div>
+
+<div>
+  <section class="controls">
+    <button class="btn" (click)="generateWithoutKruskal()">📏 Calculate sans Kruskal</button>
+    <button class="btn" (click)="generateWithKruskal()">📏 Calculate avec Kruskal</button>
+    <button class="btn" (click)="clearMap()">Clear Map</button>
+ </section>
+</div>
